@@ -12,11 +12,11 @@ classifier=pickle.load(pickle_in)
 def welcome():
     return "Welcome All"
 
-def predict_note_authentication(HeartDisease, BMI, Smoking, AlcoholDrinking, Stroke,PhysicalHealth, MentalHealth, 
+def predict_note_authentication(BMI, Smoking, AlcoholDrinking, Stroke,PhysicalHealth, MentalHealth, 
 								DiffWalking, Sex, AgeCategory, Race, Diabetic, PhysicalActivity, GenHealth, SleepTime,
 								Asthma, KidneyDisease, SkinCancer):
    
-    prediction=classifier.predict([[HeartDisease, BMI, Smoking, AlcoholDrinking, Stroke,PhysicalHealth, MentalHealth, 
+    prediction=classifier.predict([[BMI, Smoking, AlcoholDrinking, Stroke,PhysicalHealth, MentalHealth, 
 								DiffWalking, Sex, AgeCategory, Race, Diabetic, PhysicalActivity, GenHealth, SleepTime,
 								Asthma, KidneyDisease, SkinCancer]])
     print(prediction)
@@ -53,7 +53,7 @@ def main():
 
     result=""
     if st.button("Predict"):
-        result = predict_note_authentication(HeartDisease, BMI, Smoking, AlcoholDrinking, Stroke,PhysicalHealth, 
+        result = predict_note_authentication(BMI, Smoking, AlcoholDrinking, Stroke,PhysicalHealth, 
                                             MentalHealth, DiffWalking, Sex, AgeCategory, Race, Diabetic, 
                                             PhysicalActivity, GenHealth, SleepTime, Asthma, KidneyDisease, SkinCancer)
     st.success('The output is {}'.format(result))
